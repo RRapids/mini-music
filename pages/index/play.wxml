@@ -1,5 +1,25 @@
 <!-- 播放器 -->
-<view style="background:#ddd; color:#000; height:100%">
-
-    play
+<view class="content-play">
+    <!-- 显示音乐信息 -->
+    <view class="content-play-info">
+        <text>{{play.title}}</text>
+        <view>——{{play.singer}}——</view>
+    </view>
+    <!-- 显示专辑封面 -->
+    <view class="content-play-cover"></view>
+    <!-- 显示播放进度和时间 -->
+    <view class="content-play-progress"></view>
+    <!-- 显示专辑封面 -->
+    <view class="content-play-cover">
+        <image src="{{play.coverImgUrl}}" style="animation-play-state" />
+        {{state}}
+    </view>
+    <!-- 显示播放进度和时间 -->
+    <view class="content-play-progress">
+        <text>{{play.currentTime}}</text>
+        <view>
+            <slider bindchange="sliderChange" active-color="#d33a31" block-size="12" background-color="#dadada" value="{{play.percent}}" />
+        </view>
+        <text>{{play.duration}}</text>
+    </view>
 </view>

@@ -20,4 +20,19 @@
     </swiper>
 </view>
 <!-- 底部播放器 -->
-<view class="player"></view>
+<view class="player">
+    <image class="player-cover" src="{{play.coverImgUrl}}" />
+    <view class="player-info">
+        <view class="player-info-title">{{play.title}}</view>
+        <view class="player-info-singer">{{play.singer}}</view>
+    </view>
+    <view class="player-controls">
+        <!-- 切换到播放列表 -->
+        <image src="/images/menu.png" bindtap="changePage" data-page="2" />
+        <!-- 播放 -->
+        <image wx:if="{{state=='paused'}}" src="/images/play.png" bindtap="play" />
+        <image wx:else src="/images/暂停.png" bindtap="pause" />
+        <!-- 下一曲 -->
+        <image src="/images/circled-right.png" bindtap="next" />
+    </view>
+</view>
